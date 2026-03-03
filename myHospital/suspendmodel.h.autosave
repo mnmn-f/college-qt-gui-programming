@@ -1,0 +1,67 @@
+//(全部内联，无 .cpp 也可)
+#ifndef SUSPENDMODEL_H
+#define SUSPENDMODEL_H
+#include <QAbstractTableModel>
+#include "suspend.h"
+#include "doctorinfortable.h"
+
+class SuspendModel : public QAbstractTableModel {
+    Q_OBJECT
+public:
+    explicit SuspendModel(QObject *p, DoctorInfortable *doc):QAbstractTableModel(p),m_doc(doc){}
+    int rowCount(const QModelIndex&) const override
+    {
+        return items.size();
+    }
+    int columnCount(const QModelIndex&) const override
+    {
+        return 3;
+    }
+
+    QVariant headerData(int s, Qt::Orientation o, int r) const override
+    {
+        if (r!=Qt::DisplayRole || o!=Qt::Horizontal) return {};
+        static const QStringList H={"医生","日期","原因"}; return H.value(s);
+    }
+
+    QVariant data(const QModelIndex &i, int r) const override
+    {
+        if (!i.isValid() || r!=Qt::DisplayRole) return {};
+        const auto &x=items[i.row()];
+        switch(i.column())
+        {
+        case 0: return (m_doc && x.doctorIndex>=0 && x.doctorIndex<m_doc->getDoctorNum())
+                        ? m_doc->getDoctor(x.doctorIndex).d_name : QString("-");
+        case 1: return x.date.toString("yyyy-MM-dd");
+        case 2: return x.reason;
+        default:return {};
+        }
+    }
+    void setAll(const QVector<SuspendItem> &v)
+    { beginResetModel();
+        items=v;
+        endResetModel();
+    }
+
+    QVector<SuspendItem> all() const
+    { return items; }
+    
+    void add(const SuspendItem &it)
+    {
+        beginInsertRows({},items.size(),items.size());
+        items.push_back(it);
+        endInsertRows();
+    }
+
+    void removeRowAt(int row)
+    { if(row<0||row>=items.size())return;
+        beginRemoveRows({},row,row);
+        items.removeAt(row);
+        endRemoveRows();
+    }
+
+private:
+    DoctorInfortable *m_doc=nullptr;
+    QVector<SuspendItem> items;
+};
+#endif

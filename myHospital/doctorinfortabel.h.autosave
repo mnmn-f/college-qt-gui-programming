@@ -1,0 +1,12 @@
+#ifndef DOCTORINFORTABEL_H
+#define DOCTORINFORTABEL_H
+
+
+class DoctorInfortabel
+{
+public:
+    DoctorInfortabel();
+    vitual DoctorInfortable
+};
+
+#endif // DOCTORINFORTABEL_H

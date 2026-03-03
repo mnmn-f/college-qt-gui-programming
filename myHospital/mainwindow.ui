@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1158</width>
+    <height>609</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1158</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件（&amp;F）</string>
+    </property>
+    <addaction name="action_O"/>
+    <addaction name="action_S"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>医生信息</string>
+    </property>
+    <addaction name="actionDoctorAdd"/>
+    <addaction name="actionDoctorEdit"/>
+    <addaction name="actionDoctorDelete"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>预约门诊</string>
+    </property>
+    <addaction name="actionBookingAdd"/>
+    <addaction name="actionBookingEdit"/>
+    <addaction name="actionBookingDel"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>查找</string>
+    </property>
+    <addaction name="actionSearchBookings"/>
+    <addaction name="actionSearchDoctors"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>管理停诊</string>
+    </property>
+    <addaction name="actionManageSuspend"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>视图</string>
+    </property>
+    <addaction name="actionViewBookings"/>
+    <addaction name="actionViewDoctors"/>
+    <addaction name="actionViewDoctorBookings"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_6"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>添加专家</string>
+   </property>
+  </action>
+  <action name="actionDoctorAdd">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/new/prefix1/resource/OIP.png</normaloff>:/new/prefix1/resource/OIP.png</iconset>
+   </property>
+   <property name="text">
+    <string>添加医生信息</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>医生信息表</string>
+   </property>
+  </action>
+  <action name="action_docInfo">
+   <property name="icon">
+    <iconset>
+     <normaloff>resource/list.webp</normaloff>resource/list.webp</iconset>
+   </property>
+   <property name="text">
+    <string>医生数据</string>
+   </property>
+  </action>
+  <action name="action_bookInfo">
+   <property name="text">
+    <string>门诊预约总数据</string>
+   </property>
+  </action>
+  <action name="actionBookingAdd">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/new/prefix1/resource/pat.png</normaloff>:/new/prefix1/resource/pat.png</iconset>
+   </property>
+   <property name="text">
+    <string>新增预约</string>
+   </property>
+  </action>
+  <action name="action_O">
+   <property name="text">
+    <string>打开文件(O)</string>
+   </property>
+  </action>
+  <action name="action_S">
+   <property name="text">
+    <string>保存文件(S)</string>
+   </property>
+  </action>
+  <action name="actionSearchBookings">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/new/prefix1/resource/search.png</normaloff>:/new/prefix1/resource/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>查找预约记录</string>
+   </property>
+  </action>
+  <action name="actionSearchDoctors">
+   <property name="text">
+    <string>查找医生</string>
+   </property>
+  </action>
+  <action name="actionManageSuspend">
+   <property name="text">
+    <string>管理停诊</string>
+   </property>
+  </action>
+  <action name="actBookingAdd">
+   <property name="text">
+    <string>新增预约</string>
+   </property>
+  </action>
+  <action name="actBookingEdit">
+   <property name="text">
+    <string>修改预约</string>
+   </property>
+  </action>
+  <action name="actBookingDel">
+   <property name="text">
+    <string>删除预约</string>
+   </property>
+  </action>
+  <action name="actionViewDoctors">
+   <property name="text">
+    <string>显示医生</string>
+   </property>
+  </action>
+  <action name="actionBookingEdit">
+   <property name="text">
+    <string>修改预约</string>
+   </property>
+  </action>
+  <action name="actionBookingDel">
+   <property name="text">
+    <string>删除预约</string>
+   </property>
+  </action>
+  <action name="actionDoctorSave">
+   <property name="text">
+    <string>保存医生信息</string>
+   </property>
+  </action>
+  <action name="actionViewDoctorBookings">
+   <property name="text">
+    <string>显示医生预约数据</string>
+   </property>
+  </action>
+  <action name="actionViewBookings">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/new/prefix1/resource/list.png</normaloff>:/new/prefix1/resource/list.png</iconset>
+   </property>
+   <property name="text">
+    <string>显示预约</string>
+   </property>
+  </action>
+  <action name="actionDoctorEdit">
+   <property name="text">
+    <string>修改医生信息</string>
+   </property>
+  </action>
+  <action name="actionDoctorDelete">
+   <property name="text">
+    <string>删除医生信息</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
